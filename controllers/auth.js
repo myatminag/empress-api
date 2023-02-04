@@ -118,7 +118,7 @@ export const forgotPassword = async (req, res, next) => {
 
         existingUser.save();
 
-        const resetUrl = `http://localhost:3000/reset-password/${resetToken}`;
+        const resetUrl = `https://empress.vercel.app/resetpassword/${resetToken}`;
 
         const message = `
             <h1>Password Reset</h1>

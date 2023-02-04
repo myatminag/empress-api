@@ -55,8 +55,8 @@ export const stripePayment = async (req, res, next) => {
             line_items,
             mode: 'payment',
             customer: customer.id,
-            success_url: `http://localhost:3000/checkout-success`,
-            cancel_url: `http://localhost:3000/order`,
+            success_url: `https://empress.vercel.app/checkout-success`,
+            cancel_url: `https://empress.vercel.app/order`,
         });
     
         res.status(200).send({ url: session.url }).json({

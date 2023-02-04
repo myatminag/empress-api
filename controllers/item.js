@@ -265,16 +265,16 @@ export const postReview = async (req, res, next) => {
         if (!item) {
             return next(new errorResponse("No Item is found on this ID!", 404));
         } else {
-            if (item.reviews.find((client) => client.name === req.user.name)) {
+            if (item.reviews.find((client) => client.username === req.user.username)) {
                 return res
                     .status(400)
                     .json({
                         message: "You have already submitted a review"
                     })
             }
-    
-            const review = {
-                name: req.user.name,
+     
+            const review = { 
+                username: req.user.username, 
                 rating: Number(req.body.rating),
                 comment: req.body.comment,
             };

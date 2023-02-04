@@ -22,7 +22,7 @@ router.delete('/item/:id', authMiddleware, adminMiddleware, deleteItem);
 router.get('/item/:id', getItemDetails);
 
 // Post Review
-router.post('/:id/reviews', authMiddleware, postReview);
+router.post('/:id/reviews', authMiddleware, postReview); 
 
 // Get Item Brand
 router.get('/brands', getBrands);
