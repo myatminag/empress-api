@@ -85,12 +85,12 @@ export const updateProfle = async (req, res, next) => {
                 .status(200)
                 .json({
                     success: true,
+                    token: generateToken(updatedUser),
                     user: {
                         _id: updatedUser._id,
                         username: updatedUser.username,
                         email: updatedUser.email,
                         isAdmin: updatedUser.isAdmin,
-                        token: generateToken(updatedUser)
                     }
                 })
         };
