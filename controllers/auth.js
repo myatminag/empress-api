@@ -39,12 +39,12 @@ export const signup = async (req, res, next) => {
                 .status(200)
                 .json({
                     success: true,
+                    token: generateToken(registeredUser),
                     user: {
                         _id: registeredUser._id,
                         username: registeredUser.username,
                         email: registeredUser.email,
                         isAdmin: registeredUser.isAdmin,
-                        token: generateToken(registeredUser)
                     }
                 })
         } catch (error) {
@@ -78,12 +78,12 @@ export const login = async (req, res, next) => {
     
             res.status(201).json({
                 success: true,
+                token: generateToken(user),
                 user: {
                     id: user.id,
                     username: user.username,
                     email: user.email,
                     isAdmin: user.isAdmin,
-                    token: generateToken(user)
                 }
             })
         }
